@@ -16,9 +16,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="format-detection" content="telephone=no">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&family=Grenze+Gotisch:wght@700..900&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/unifrakturcook-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/im-fell-dw-pica-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/tienda.css">
 </head>
 <body>
@@ -48,24 +47,26 @@
 </header>
 
 <main>
-  <section class="hero" id="top">
-    <div class="wrap hero-in">
-      <div class="hero-txt">
-        <h1 class="got"><span id="heroL1"></span><br><span id="heroL2"></span></h1>
+  <section class="hero grain" id="top">
+    <div class="tendedero" aria-hidden="true">
+      <svg class="cord" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M-20,18 Q500,112 1020,18"/></svg>
+      <div class="hang h1"><i class="pin"></i><div class="g" id="heroG1"></div></div>
+      <div class="hang h2"><i class="pin"></i><div class="g" id="heroG2"></div></div>
+      <div class="hang h3"><i class="pin"></i><div class="g" id="heroG3"></div></div>
+    </div>
+    <div class="wrap hero-txt">
+      <h1 class="got"><span id="heroL1"></span> <span id="heroL2"></span></h1>
+      <div class="hero-side">
         <p class="lead" id="heroTxt"></p>
         <div class="ctas">
-          <button class="btn btn-w" data-go="tienda" data-grupo="todo">Comprar</button>
+          <button class="btn btn-w" data-go="tienda" data-grupo="todo">Ver la colección</button>
           <button class="tlink" data-go="tienda" data-grupo="infantil">Mini D’Astrea</button>
         </div>
-      </div>
-      <div class="hero-art">
-        <div class="g1" id="heroG1"></div>
-        <div class="g2" id="heroG2"></div>
       </div>
     </div>
   </section>
 
-  <section class="season" id="season" hidden>
+  <section class="season grain" id="season" hidden>
     <div class="wrap season-in">
       <div class="season-txt">
         <h2 class="got" id="seasonTitle"></h2>
@@ -76,10 +77,10 @@
     </div>
   </section>
 
-  <section id="colecciones" class="sec dark">
+  <section id="colecciones" class="sec dark grain">
     <div class="wrap">
       <div class="sec-h">
-        <h2 class="disp">Colecciones</h2>
+        <h2 class="got">Colecciones</h2>
         <div class="tabs" id="colTabs" role="tablist"></div>
       </div>
       <div class="cols" id="cols"></div>
@@ -89,7 +90,7 @@
   <section class="shop sec" id="tienda">
     <div class="wrap">
       <div class="sec-h">
-        <h2 class="disp">Tienda</h2>
+        <h2 class="got">La tienda</h2>
         <div class="result" id="result"></div>
       </div>
       <div class="filters" id="filters">
@@ -106,7 +107,7 @@
         </div>
       </div>
       <div class="grid" id="grid"></div>
-      <div class="more" id="moreWrap"><button class="btn btn-l" id="moreBtn">Ver más</button></div>
+      <div class="more" id="moreWrap"><button class="btn btn-k" id="moreBtn">Ver más diseños</button></div>
     </div>
   </section>
 
@@ -114,7 +115,7 @@
     <div class="wrap split">
       <div class="kids-art" id="kidsArt"></div>
       <div class="txt">
-        <h2 class="disp">Mini D’Astrea</h2>
+        <h2 class="got">Mini D’Astrea</h2>
         <p>La misma actitud, en su talla. Playeras y sudaderas de la 2 a la 14, en algodón suave.</p>
         <button class="btn btn-l" data-go="tienda" data-grupo="infantil">Ver Mini</button>
       </div>
@@ -124,19 +125,19 @@
   <section class="gift sec" id="regalos">
     <div class="wrap split">
       <div class="txt">
-        <h2 class="disp">Listas de regalo</h2>
+        <h2 class="got">Listas de regalo</h2>
         <p>Arma tu lista para tu cumpleaños, Navidad o baby shower y comparte la liga. Quien te regala compra directo desde ahí y cada prenda se marca para que nadie la repita. No necesitas cuenta.</p>
         <button class="btn btn-l" data-route="mis-listas">Crear mi lista</button>
       </div>
-      <figure class="gift-q"><blockquote class="got">Que te regalen lo que sí quieres.</blockquote></figure>
+      <figure class="gift-q"><blockquote>“Que te regalen lo que sí quieres, no otra taza.”</blockquote></figure>
     </div>
   </section>
 
-  <section id="historia" class="sec dark">
+  <section id="historia" class="sec dark grain">
     <div class="wrap split story">
       <div class="owlb" aria-hidden="true"><img src="assets/buho-blanco.svg" alt=""></div>
       <div class="txt">
-        <h2 class="disp">Para quien no pide permiso</h2>
+        <h2 class="got">Para quien no pide permiso</h2>
         <p>D’Astrea nace de una idea simple: la ropa también habla. El búho es nuestro símbolo porque ve en la oscuridad lo que otros no ven.</p>
         <p>Trabajamos en ediciones cortas, pocas piezas por diseño. Cuando una se acaba, no regresa.</p>
         <p class="how">Sin cuentas ni contraseñas: armas tu bolsa, confirmas por WhatsApp y pagas por transferencia o tarjeta.</p>
@@ -146,7 +147,7 @@
 
   <section class="wait">
     <div class="wrap wait-in">
-      <div><h2 class="disp">Próximo drop</h2><p>Quien está en la lista compra primero.</p></div>
+      <div><h2 class="got">Próximo drop</h2><p>Quien está en la lista compra primero.</p></div>
       <form id="waitForm" autocomplete="on"><label class="sr" for="waitIn">Correo o WhatsApp</label><input id="waitIn" name="contacto" required placeholder="Correo o WhatsApp" inputmode="email"><button class="btn btn-w" type="submit">Avisarme</button></form>
     </div>
   </section>

@@ -52,6 +52,9 @@
     const p2 = prod(h.producto2) && DA.visible(cat, prod(h.producto2)) ? prod(h.producto2) : vis[1];
     if (p1) { const g = garmentFor(p1, "sudadera"), c = DA.colorsFor(cat, p1, g)[0]; $("#heroG1").innerHTML = gar(g, c && c.id, p1); $("#heroG1").onclick = () => openProduct(p1.id, g, c && c.id); }
     if (p2) { const g = garmentFor(p2, "playera"), c = DA.colorsFor(cat, p2, g)[0]; $("#heroG2").innerHTML = gar(g, c && c.id, p2); }
+    const p3 = vis.find((p) => p !== p1 && p !== p2 && DA.groupOf(cat, p) !== "infantil");
+    if (p3) { const g = garmentFor(p3, "playera"), cs = DA.colorsFor(cat, p3, g), c = cs[1] || cs[0]; $("#heroG3").innerHTML = gar(g, c && c.id, p3); $("#heroG3").onclick = () => openProduct(p3.id, g, c && c.id); }
+    if (p2) { const g = garmentFor(p2, "playera"), c = DA.colorsFor(cat, p2, g)[0]; $("#heroG2").onclick = () => openProduct(p2.id, g, c && c.id); }
     const t = A().temporada || {}; const tc = cat._c[t.coleccion];
     const navT = $("#navTemp"); if (navT) navT.textContent = tc && tc.activa !== false && t.activa !== "ninguna" ? tc.nombre : "Temporada";
   }
