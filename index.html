@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es" data-base="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>D’Astrea — Mira más allá</title>
+<meta name="description" content="D’Astrea · Ropa con carácter. Playeras y sudaderas para adultos y niños en ediciones de piezas contadas. Envíos a todo México.">
+<meta name="theme-color" content="#0B0B0B">
+<meta property="og:title" content="D’Astrea — Mira más allá">
+<meta property="og:description" content="Playeras y sudaderas para quien no pide permiso. Piezas contadas.">
+<meta property="og:image" content="assets/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Grenze+Gotisch:wght@600..900&family=Instrument+Sans:wght@400..600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tienda.css">
+</head>
+<body>
+<a class="skip" href="#tienda">Ir a la tienda</a>
+
+<div class="bar" id="bar" aria-label="Avisos"><div class="track" id="barTrack"></div></div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap hd">
+    <div class="hd-l">
+      <button class="tbtn menu-btn" id="menuBtn" aria-label="Abrir menú" data-icon="Menú"></button>
+      <nav class="main" aria-label="Principal">
+        <button data-go="tienda" data-grupo="adultos">Tienda</button>
+        <button data-go="tienda" data-grupo="infantil">Mini</button>
+        <button data-go="tienda" data-grupo="temporada" id="navTemp">Temporada</button>
+        <button data-route="mis-listas">Listas de regalo</button>
+      </nav>
+    </div>
+    <a class="logo" href="#" data-home aria-label="D’Astrea, inicio"><img src="assets/logo-blanco.svg" alt="D’Astrea" width="88" height="65"></a>
+    <div class="tools">
+      <button class="tbtn" id="searchBtn" aria-label="Buscar" data-icon="Buscar"></button>
+      <button class="tbtn hide-s" data-route="mis-listas" aria-label="Mis listas de regalo"><span data-icon="Regalo"></span><span class="badge" id="listBadge"></span></button>
+      <button class="tbtn" id="favBtn" aria-label="Favoritos"><span data-icon="Favoritos"></span><span class="badge" id="favBadge"></span></button>
+      <button class="tbtn" id="cartBtn" aria-label="Tu bolsa"><span data-icon="Bolsa"></span><span class="badge" id="cartBadge"></span></button>
+    </div>
+  </div>
+  <div class="search" id="search"><div class="wrap"><label class="sr" for="q">Buscar</label><input id="q" type="search" enterkeyhint="search" placeholder="Busca: hope, oni, búho, osito…" autocomplete="off"></div></div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="owlbg" aria-hidden="true"><img src="assets/buho-blanco.svg" alt=""></div>
+    <div class="hero-txt">
+      <div class="kick mono"><i></i><span id="heroKick"></span></div>
+      <h1 class="got"><span id="heroL1"></span><br><em id="heroL2"></em></h1>
+      <p class="lead" id="heroTxt"></p>
+      <div class="ctas">
+        <button class="btn btn-w" data-go="tienda" data-grupo="todo">Comprar ahora <span data-icon="Siguiente"></span></button>
+        <button class="btn btn-o" data-go="tienda" data-grupo="infantil">Ver Mini D’Astrea</button>
+      </div>
+      <div class="hero-meta" id="heroMeta"></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="g1" id="heroG1"></div>
+      <div class="g2" id="heroG2"></div>
+      <div class="tagp" id="heroTag"></div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true"><div class="track" id="stripTrack"></div></div>
+
+  <section class="season" id="season" hidden>
+    <div class="wrap season-in">
+      <div class="season-txt">
+        <div class="mono k">Temporada</div>
+        <h2 class="got" id="seasonTitle"></h2>
+        <p id="seasonText"></p>
+        <button class="btn btn-w" id="seasonBtn">Ver la colección <span data-icon="Siguiente"></span></button>
+      </div>
+      <div class="season-art" id="seasonArt"></div>
+    </div>
+  </section>
+
+  <section id="colecciones" class="sec">
+    <div class="wrap">
+      <div class="sec-h">
+        <div><div class="k mono" id="colCount"></div><h2 class="disp">Elige tu<br>lado oscuro</h2></div>
+        <p>Cada colección cuenta una historia. Para adultos en playera oversize o sudadera, y para los más chicos en su versión Mini.</p>
+      </div>
+      <div class="gtabs" id="colTabs" role="tablist"></div>
+      <div class="cols" id="cols"></div>
+    </div>
+  </section>
+
+  <section class="shop sec" id="tienda">
+    <div class="wrap">
+      <div class="sec-h">
+        <div><div class="k mono">Tienda</div><h2 class="disp">La colección</h2></div>
+        <p>Elige diseño, prenda, color y talla. Cuando una edición se acaba, no regresa.</p>
+      </div>
+      <div class="filters" id="filters">
+        <div class="seg" id="grupoSeg" role="tablist" aria-label="Para quién"></div>
+        <div class="frow">
+          <div class="chips" id="chips"></div>
+          <div class="fr-r">
+            <div class="seg sm" id="tipoSeg" aria-label="Tipo de prenda">
+              <button data-t="all" class="on">Todo</button><button data-t="playera">Playeras</button><button data-t="sudadera">Sudaderas</button>
+            </div>
+            <label class="sel"><span class="sr">Ordenar</span>
+              <select id="sort"><option value="dest">Destacados</option><option value="nuevo">Nuevos</option><option value="menor">Menor precio</option><option value="mayor">Mayor precio</option></select>
+              <span data-icon="Abajo"></span></label>
+          </div>
+        </div>
+      </div>
+      <div class="result mono" id="result"></div>
+      <div class="grid" id="grid"></div>
+      <div class="more" id="moreWrap"><button class="btn btn-k" id="moreBtn">Ver más diseños</button></div>
+    </div>
+  </section>
+
+  <section class="kids sec" id="mini">
+    <div class="wrap kids-in">
+      <div class="kids-art" id="kidsArt"></div>
+      <div>
+        <div class="mono k">Mini D’Astrea</div>
+        <h2 class="disp">Pequeños que<br>tampoco piden permiso</h2>
+        <p>La misma actitud, en su talla. Tallas 2 a 14, algodón suave y diseños tejidos, brillantes y streetwear.</p>
+        <button class="btn btn-k" data-go="tienda" data-grupo="infantil">Ver todo Mini <span data-icon="Siguiente"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="gift sec" id="regalos">
+    <div class="wrap gift-in">
+      <div>
+        <div class="mono k">Listas de regalo</div>
+        <h2 class="got">Que te regalen lo que sí quieres</h2>
+        <p>Arma tu lista para tu cumpleaños, Navidad o baby shower. Comparte la liga y tu gente compra directo: cada prenda regalada se marca para que nadie la repita.</p>
+        <div class="ctas"><button class="btn btn-w" data-route="mis-listas">Crear mi lista <span data-icon="Regalo"></span></button></div>
+      </div>
+      <ol class="gsteps">
+        <li><span class="n mono">01</span><span data-icon="Favoritos"></span><b>Elige</b><span>Toca “Agregar a mi lista” en cualquier diseño, con tu talla y color.</span></li>
+        <li><span class="n mono">02</span><span data-icon="Compartir"></span><b>Comparte</b><span>Manda tu liga por WhatsApp o redes. No necesitas cuenta.</span></li>
+        <li><span class="n mono">03</span><span data-icon="Regalo"></span><b>Recibe</b><span>Quien te regala compra desde tu lista y la prenda se marca como regalada.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="historia" class="sec">
+    <div class="wrap story">
+      <div class="owlb" aria-hidden="true"><img src="assets/buho-blanco.svg" alt=""></div>
+      <div>
+        <div class="mono k">La marca</div>
+        <h2 class="disp">Hecho para quien<br>no pide permiso</h2>
+        <p>D’Astrea nace de una idea simple: la ropa también habla. El búho es nuestro símbolo porque ve en la oscuridad lo que otros no ven.</p>
+        <p>Por eso trabajamos en ediciones cortas. Pocas piezas por diseño, cuidadas en cada detalle, para que lo que traes puesto sea tuyo de verdad.</p>
+        <div class="pills">
+          <div class="pill"><span data-icon="Ver"></span><b>Misterio</b><span>Mostramos poco y decimos mucho.</span></div>
+          <div class="pill"><span data-icon="Nuevo"></span><b>Carácter</b><span>Diseños que no piden aprobación.</span></div>
+          <div class="pill"><span data-icon="Precio"></span><b>Detalle</b><span>Algodón, costura y empaque cuidados.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps sec">
+    <div class="wrap">
+      <div class="sec-h"><div><div class="k mono">Cómo comprar</div><h2 class="disp">Fácil y directo</h2></div><p>Sin cuentas ni contraseñas. Armas tu bolsa y confirmas tu pedido por WhatsApp.</p></div>
+      <div class="st">
+        <div><span class="n">01</span><span data-icon="Búho"></span><h3>Elige el diseño</h3><p>Explora las colecciones y encuentra el que va contigo.</p></div>
+        <div><span class="n">02</span><span data-icon="Tallas"></span><h3>Prenda, color y talla</h3><p>Playera o sudadera, para adulto o Mini. Revisa la guía de tallas.</p></div>
+        <div><span class="n">03</span><span data-icon="Chat"></span><h3>Confirma por WhatsApp</h3><p>Te llega tu pedido listo para pagar por transferencia o tarjeta.</p></div>
+        <div><span class="n">04</span><span data-icon="Envíos"></span><h3>Recíbelo</h3><p>Lo empacamos en caja negra con sticker y tarjeta.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wait sec">
+    <div class="owlbg" aria-hidden="true"><img src="assets/buho-negro.svg" alt=""></div>
+    <div class="wrap in">
+      <div class="mono k">Próximo drop</div>
+      <h2 class="got">Entra a la lista</h2>
+      <p>Quien está en la lista compra primero. Te avisamos antes de cada lanzamiento.</p>
+      <form id="waitForm" autocomplete="on"><label class="sr" for="waitIn">Correo o WhatsApp</label><input id="waitIn" name="contacto" required placeholder="Tu correo o WhatsApp" inputmode="email"><button class="btn btn-w" type="submit">Avisarme</button></form>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ft">
+      <div><a class="logo" href="#" data-home><img src="assets/logo-blanco.svg" alt="D’Astrea" width="116" height="86"></a><p>Ropa con carácter. Ediciones de piezas contadas.</p></div>
+      <div><h4>Tienda</h4><ul>
+        <li><button data-go="tienda" data-grupo="adultos">Adultos</button></li>
+        <li><button data-go="tienda" data-grupo="infantil">Mini D’Astrea</button></li>
+        <li><button data-go="tienda" data-grupo="temporada">Temporada</button></li>
+        <li><button data-route="mis-listas">Listas de regalo</button></li></ul></div>
+      <div><h4>Ayuda</h4><ul>
+        <li><button data-route="legal=envios">Envíos y cambios</button></li>
+        <li><button data-sizes>Guía de tallas</button></li>
+        <li><button data-route="legal=terminos">Términos y condiciones</button></li>
+        <li><button data-route="legal=privacidad">Aviso de privacidad</button></li>
+        <li><button data-route="legal=cookies">Cookies</button></li></ul></div>
+      <div><h4>Contacto</h4><ul id="ftContact"></ul></div>
+    </div>
+    <div class="legal mono"><span>© <span id="yr"></span> D’Astrea · Mira más allá</span><span id="ftCity"></span></div>
+  </div>
+</footer>
+
+<!-- capas -->
+<div class="ov" id="ov"></div>
+
+<nav class="mnav" id="mnav" aria-label="Menú">
+  <div class="mnav-h"><img src="assets/logo-blanco.svg" alt="D’Astrea" width="70" height="52"><button class="tbtn" data-close aria-label="Cerrar" data-icon="Cerrar"></button></div>
+  <button class="l" data-go="tienda" data-grupo="todo">Tienda</button>
+  <button class="l" data-go="tienda" data-grupo="adultos">Adultos</button>
+  <button class="l" data-go="tienda" data-grupo="infantil">Mini</button>
+  <button class="l" data-go="tienda" data-grupo="temporada">Temporada</button>
+  <button class="l" data-route="mis-listas">Listas de regalo</button>
+  <button class="l" data-go="historia">La marca</button>
+  <div class="mnav-f mono" id="mnavContact"></div>
+</nav>
+
+<aside class="drawer" id="drawer" aria-label="Tu bolsa" aria-hidden="true">
+  <div class="dh"><h3 class="got">Tu bolsa</h3><button class="tbtn" data-close aria-label="Cerrar" data-icon="Cerrar"></button></div>
+  <div class="ship" id="ship"><div class="t" id="shipT"></div><div class="bar2"><i id="shipBar"></i></div></div>
+  <div class="items" id="items"></div>
+  <div class="df" id="df">
+    <div class="row"><span>Subtotal</span><span id="sub" class="mono"></span></div>
+    <div class="row"><span>Envío</span><span id="env" class="mono"></span></div>
+    <div class="row tot"><span>Total</span><span id="tot"></span></div>
+    <button class="btn btn-k wide" id="checkout"><span data-icon="Chat"></span> Pedir por WhatsApp</button>
+    <div class="note mono">Pagas al confirmar · transferencia o tarjeta</div>
+    <button class="linkbtn mono" id="clearCart">Vaciar bolsa</button>
+  </div>
+</aside>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mName" aria-hidden="true">
+  <div class="mbox" id="mbox">
+    <button class="mclose" data-close aria-label="Cerrar" data-icon="Cerrar"></button>
+    <div class="mprev"><div class="tags" id="mTags"></div><div class="big" id="mBig"></div><div class="pnote mono">Vista previa · el tono real puede variar</div></div>
+    <div class="minfo">
+      <div class="cl mono" id="mCol"></div>
+      <h3 id="mName"></h3>
+      <div class="pr" id="mPrice"></div>
+      <p class="desc" id="mDesc"></p>
+      <div class="opt"><div class="lb mono"><span>Prenda</span></div><div class="gsel" id="mG"></div></div>
+      <div class="opt"><div class="lb mono"><span>Color · <b id="mCName"></b></span></div><div class="csel" id="mC"></div></div>
+      <div class="opt"><div class="lb mono"><span>Diseño · <b id="mDName"></b></span></div><div class="dsel" id="mD"></div></div>
+      <div class="opt" id="sizeOpt"><div class="lb mono"><span>Talla · <b id="mSName">elige una</b></span><button class="linkbtn" data-sizes>Guía de tallas</button></div><div class="ssel" id="mS"></div></div>
+      <div class="stock mono" id="mStock"></div>
+      <div class="addrow">
+        <div class="qty big"><button id="qm" aria-label="Menos">−</button><span id="qv">1</span><button id="qp" aria-label="Más">+</button></div>
+        <button class="btn btn-k" id="addBtn"><span data-icon="Bolsa"></span> Agregar a la bolsa</button>
+      </div>
+      <div class="addrow2">
+        <button class="btn btn-l" id="addListBtn"><span data-icon="Regalo"></span> Agregar a mi lista</button>
+        <button class="tbtn sq" id="mFav" aria-label="Favorito" data-icon="Favoritos"></button>
+        <button class="tbtn sq" id="mShare" aria-label="Compartir" data-icon="Compartir"></button>
+      </div>
+      <details open><summary>Detalles de la prenda</summary><p id="mDet"></p></details>
+      <details id="sizesDet"><summary>Guía de tallas</summary><div id="sizeTable"></div></details>
+      <details><summary>Envíos y cambios</summary><p id="mShip"></p></details>
+    </div>
+  </div>
+</div>
+
+<!-- hoja de página completa: listas, lista pública y políticas -->
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="sheet-h"><button class="tbtn" data-close aria-label="Regresar" data-icon="Atras"></button><img src="assets/logo-blanco.svg" alt="D’Astrea" width="56" height="41"><span style="width:44px"></span></div>
+  <div class="sheet-b" id="sheetBody"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><div class="th" id="tTh"></div><div class="tt"><b id="tName"></b><span class="mono" id="tOpt"></span></div><button id="tView">Ver bolsa</button></div>
+
+<div class="cookie" id="cookie" hidden>
+  <p>Guardamos tu bolsa y favoritos en tu navegador para que no los pierdas. Sin publicidad ni rastreo. <button class="linkbtn" data-route="legal=cookies">Saber más</button></p>
+  <button class="btn btn-w sm" id="cookieOk">Entendido</button>
+</div>
+
+<script src="assets/iconos.js"></script>
+<script src="data/catalog.js"></script>
+<script src="assets/core.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
