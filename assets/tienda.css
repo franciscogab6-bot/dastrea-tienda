@@ -96,13 +96,15 @@ nav.main button,.tl{font-size:18px;color:var(--ceniza2);padding:10px 0 8px;displ
 .tendedero{position:absolute;left:0;right:0;top:0;height:76%;z-index:1;background:radial-gradient(ellipse 60% 70% at 50% 30%,rgba(232,223,207,.16),rgba(232,223,207,.05) 55%,transparent 80%)}
 .cord{position:absolute;left:0;top:0;width:100%;height:150px}
 .cord path{fill:none;stroke:var(--ceniza2);stroke-width:1.4;vector-effect:non-scaling-stroke}
-.hang{position:absolute;transform-origin:50% 0;animation:mece 5.5s ease-in-out infinite alternate;will-change:transform}
-.hang .g{width:100%;aspect-ratio:400/440;margin-top:-10%;cursor:pointer;filter:drop-shadow(0 0 1px rgba(232,223,207,.55)) drop-shadow(0 24px 26px rgba(0,0,0,.6))}
-.hang .pin{position:absolute;left:50%;top:-14px;width:12px;height:34px;margin-left:-6px;background:linear-gradient(90deg,#b99a6c,#d8bf93 45%,#a1855a);border-radius:2px;z-index:3;box-shadow:0 2px 3px rgba(0,0,0,.5)}
+.rack{position:absolute;left:0;top:42px;display:flex;align-items:flex-start;width:max-content;animation:tendedero calc(var(--n,8) * 7s) linear infinite;will-change:transform}
+.tendedero:hover .rack{animation-play-state:paused}
+@keyframes tendedero{to{transform:translate3d(-50%,0,0)}}
+.hang{position:relative;flex:none;width:clamp(170px,19vw,290px);margin-right:clamp(30px,5vw,90px);transform-origin:50% 0;animation:mece 5.5s ease-in-out infinite alternate;cursor:pointer;display:block}
+.hang .g{display:block;width:100%;aspect-ratio:400/440;margin-top:-6%;filter:drop-shadow(0 0 1px rgba(232,223,207,.55)) drop-shadow(0 24px 26px rgba(0,0,0,.6))}
+.hang .pin{position:absolute;left:50%;top:-16px;width:12px;height:34px;margin-left:-6px;background:linear-gradient(90deg,#b99a6c,#d8bf93 45%,#a1855a);border-radius:2px;z-index:3;box-shadow:0 2px 3px rgba(0,0,0,.5)}
 .hang .pin:after{content:"";position:absolute;left:5px;top:7px;width:2px;height:14px;background:rgba(0,0,0,.35)}
-.hang.h1{left:7%;top:70px;width:clamp(150px,17vw,280px);animation-duration:6.2s}
-.hang.h2{left:39%;top:94px;width:clamp(180px,21vw,340px);animation-delay:-2.4s}
-.hang.h3{left:72%;top:68px;width:clamp(140px,16vw,260px);animation-duration:4.8s;animation-delay:-1.2s}
+.hang .nm{display:block;text-align:center;font-style:italic;font-size:15px;color:var(--ceniza2);margin-top:8px;opacity:0;transition:opacity .3s}
+@media (hover:hover){.hang:hover .nm{opacity:1}}
 @keyframes mece{from{transform:rotate(-2.6deg)}to{transform:rotate(2.6deg)}}
 .hero-txt{position:relative;z-index:2;pointer-events:none;width:100%;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(20px,4vw,60px);align-items:end}
 .hero h1{font-size:clamp(64px,min(9.5vw,15.5vh),170px);line-height:.82;color:var(--hueso);letter-spacing:-.01em;text-shadow:0 6px 30px rgba(0,0,0,.6)}
@@ -407,12 +409,11 @@ th{font-weight:400;font-style:italic;color:var(--muted)}
   nav.main{display:none}
   .menu-btn{display:inline-flex;color:var(--hueso)}
   .logo img{height:40px}
-  .hero{min-height:auto;padding-top:min(calc(40vw + 90px),460px)}
-  .tendedero{bottom:auto;top:0;height:min(calc(40vw + 90px),460px)}
-  .cord{height:100px}
-  .hang.h1{left:2%;top:44px;width:33vw}
-  .hang.h2{left:34%;top:58px;width:36vw}
-  .hang.h3{left:70%;top:42px;width:30vw}
+  .hero{min-height:auto;padding-top:min(calc(37vw + 66px),460px)}
+  .tendedero{bottom:auto;top:0;height:min(calc(37vw + 66px),460px)}
+  .cord{height:80px}
+  .hang{width:34vw;margin-right:8vw}
+  .rack{top:30px}
   .hero-txt{grid-template-columns:1fr;gap:18px}
   .hero h1{font-size:clamp(76px,19vw,150px)}
   .season-in,.split,.wait-in{grid-template-columns:1fr}
