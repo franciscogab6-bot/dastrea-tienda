@@ -407,8 +407,8 @@ th{font-weight:400;font-style:italic;color:var(--muted)}
   nav.main{display:none}
   .menu-btn{display:inline-flex;color:var(--hueso)}
   .logo img{height:40px}
-  .hero{min-height:auto;padding-top:clamp(230px,62vw,460px)}
-  .tendedero{bottom:auto;top:0;height:clamp(230px,62vw,460px)}
+  .hero{min-height:auto;padding-top:min(calc(40vw + 90px),460px)}
+  .tendedero{bottom:auto;top:0;height:min(calc(40vw + 90px),460px)}
   .cord{height:100px}
   .hang.h1{left:2%;top:44px;width:33vw}
   .hang.h2{left:34%;top:58px;width:36vw}
