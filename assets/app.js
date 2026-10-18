@@ -38,20 +38,20 @@
   /* ---------- barra, franja, hero ---------- */
   function renderTop() {
     const bar = (A().barra || []).filter(Boolean), strip = (A().franja || []).filter(Boolean);
-    $("#barTrack").innerHTML = Array(4).fill(bar).flat().map((t) => `<span>${E(t)} ✦</span>`).join("");
-    $("#stripTrack").innerHTML = Array(3).fill(strip).flat().map((t) => `<span>${E(t)}${ic("Nuevo")}</span>`).join("");
+    const msgs = bar.map((t) => String(t).replace(/[✦★✧·]+/g, " ").replace(/\s+/g, " ").trim()).filter(Boolean);
+    $("#bar").hidden = !msgs.length;
+    $("#barTrack").innerHTML = msgs.map((t, i) => `<span class="${i ? "" : "on"}">${E(t)}</span>`).join("");
+    clearInterval(renderTop.t);
+    if (msgs.length > 1) { let k = 0; renderTop.t = setInterval(() => { const sp = $$("#barTrack span"); if (!sp.length) return; sp[k % sp.length].classList.remove("on"); k++; sp[k % sp.length].classList.add("on"); }, 4500); }
     const h = A().hero || {};
-    $("#heroKick").textContent = h.kicker || "";
     $("#heroL1").textContent = h.linea1 || "Mira";
     $("#heroL2").textContent = h.linea2 || "más allá.";
     $("#heroTxt").textContent = h.texto || "";
     const vis = visibleProducts();
     const p1 = prod(h.producto1) && DA.visible(cat, prod(h.producto1)) ? prod(h.producto1) : vis[0];
     const p2 = prod(h.producto2) && DA.visible(cat, prod(h.producto2)) ? prod(h.producto2) : vis[1];
-    if (p1) { const g = garmentFor(p1, "sudadera"), c = DA.colorsFor(cat, p1, g)[0]; $("#heroG1").innerHTML = gar(g, c && c.id, p1); $("#heroTag").innerHTML = `<b>${E(p1.nombre)}</b><span class="mono">${E(cat._g[g].corto)} · ${E(c ? c.nombre : "")}</span>`; $("#heroTag").onclick = () => openProduct(p1.id, g, c && c.id); }
+    if (p1) { const g = garmentFor(p1, "sudadera"), c = DA.colorsFor(cat, p1, g)[0]; $("#heroG1").innerHTML = gar(g, c && c.id, p1); $("#heroG1").onclick = () => openProduct(p1.id, g, c && c.id); }
     if (p2) { const g = garmentFor(p2, "playera"), c = DA.colorsFor(cat, p2, g)[0]; $("#heroG2").innerHTML = gar(g, c && c.id, p2); }
-    const kids = vis.filter((p) => DA.groupOf(cat, p) === "infantil").length;
-    $("#heroMeta").innerHTML = `<div><b>${vis.length}</b><span class="mono">Diseños</span></div><div><b>${kids}</b><span class="mono">Mini</span></div><div><b>CH–XXG</b><span class="mono">Tallas</span></div>`;
     const t = A().temporada || {}; const tc = cat._c[t.coleccion];
     const navT = $("#navTemp"); if (navT) navT.textContent = tc && tc.activa !== false && t.activa !== "ninguna" ? tc.nombre : "Temporada";
   }
@@ -75,21 +75,20 @@
   const GROUPS = [["todo", "Todo"], ["adultos", "Adultos"], ["infantil", "Mini"], ["temporada", "Temporada"]];
   function renderCollections() {
     const cols = cat.colecciones.filter((c) => c.activa !== false && visibleProducts().some((p) => p.coleccion === c.id));
-    $("#colCount").textContent = cols.length + " colecciones";
-    $("#colTabs").innerHTML = GROUPS.filter(([g]) => g === "todo" || cols.some((c) => c.grupo === g)).map(([g, n]) => `<button class="gtab ${g === colTab ? "on" : ""}" data-ctab="${g}" role="tab" aria-selected="${g === colTab}">${n}</button>`).join("");
+    $("#colTabs").innerHTML = GROUPS.filter(([g]) => g === "todo" || cols.some((c) => c.grupo === g)).map(([g, n]) => `<button class="${g === colTab ? "on" : ""}" data-ctab="${g}" role="tab" aria-selected="${g === colTab}">${n}</button>`).join("");
     const t = A().temporada || {};
     const list = cols.filter((c) => colTab === "todo" || c.grupo === colTab);
     $("#cols").innerHTML = list.map((c, i) => {
       const ps = visibleProducts().filter((p) => p.coleccion === c.id); const hp = ps[0]; const g = garmentFor(hp, i % 3 === 1 ? "sudadera" : "playera"); const k = DA.colorsFor(cat, hp, g)[0];
       const feat = c.id === t.coleccion && t.activa !== "ninguna";
-      return `<button class="colc ${feat ? "feat" : ""}" data-colgo="${c.id}" style="animation-delay:${i * 35}ms"><span class="num mono">${String(i + 1).padStart(2, "0")}</span><div class="gar">${gar(g, k && k.id, hp)}</div><div class="cap"><div class="got">${E(c.nombre)}</div><div class="mono">${ps.length} diseños · ${E(c.descripcion || "")}</div></div></button>`;
+      return `<button class="colc ${feat ? "feat" : ""}" data-colgo="${c.id}"><div class="ph"><div class="gar">${gar(g, k && k.id, hp)}</div></div><div class="cap"><span class="nm">${E(c.nombre)}</span><span class="n">${ps.length}</span></div></button>`;
     }).join("");
   }
 
   /* ---------- filtros ---------- */
   function renderFilters() {
     const vis = visibleProducts();
-    $("#grupoSeg").innerHTML = GROUPS.filter(([g]) => g === "todo" || vis.some((p) => DA.groupOf(cat, p) === g)).map(([g, n]) => `<button data-grupo-f="${g}" class="${F.grupo === g && !F.fav ? "on" : ""}" role="tab">${n}</button>`).join("") + (F.fav ? `<button class="on" data-favoff>♥ Favoritos ✕</button>` : "");
+    $("#grupoSeg").innerHTML = GROUPS.filter(([g]) => g === "todo" || vis.some((p) => DA.groupOf(cat, p) === g)).map(([g, n]) => `<button data-grupo-f="${g}" class="${F.grupo === g && !F.fav ? "on" : ""}" role="tab">${n}</button>`).join("") + (F.fav ? `<button class="on" data-favoff>Favoritos ×</button>` : "");
     const cols = cat.colecciones.filter((c) => c.activa !== false && (F.grupo === "todo" || c.grupo === F.grupo) && vis.some((p) => p.coleccion === c.id));
     $("#chips").innerHTML = [`<button class="chip ${F.col === "all" ? "on" : ""}" data-col="all">Todas</button>`].concat(cols.map((c) => `<button class="chip ${F.col === c.id ? "on" : ""}" data-col="${c.id}">${E(c.nombre)}</button>`)).join("");
     $$("#tipoSeg button").forEach((b) => b.classList.toggle("on", b.dataset.t === F.tipo));
@@ -137,10 +136,9 @@
         <div class="tags">${tagHTML(p)}</div>
         <button class="fav ${favs.includes(p.id) ? "on" : ""}" data-fav="${p.id}" aria-label="Guardar en favoritos" aria-pressed="${favs.includes(p.id)}">${ic("Favoritos")}</button>
         <div class="gar" data-pid="${p.id}" data-g="${g}" data-c="${c0.id || ""}"></div>
-        <div class="quick">${ic("Bolsa")} Elegir talla</div>
       </div>
-      <div class="meta"><div><div class="nm">${E(p.nombre)}</div><div class="cl mono">${E((cat._c[p.coleccion] || {}).nombre || "")} · ${E(cat._g[g].corto)}</div>
-        <div class="sw">${cs.slice(0, 6).map((c, j) => `<i class="${j === 0 ? "on" : ""}" style="background:${c.hex}" data-sw="${c.id}" title="${E(c.nombre)}"></i>`).join("")}</div></div>
+      <div class="meta"><div><div class="nm">${E(p.nombre)}</div><div class="cl">${E((cat._c[p.coleccion] || {}).nombre || "")} · ${E(cat._g[g].corto)}</div>
+        <div class="sw">${cs.slice(0, 5).map((c, j) => `<i class="${j === 0 ? "on" : ""}" style="background:${c.hex}" data-sw="${c.id}" title="${E(c.nombre)}"></i>`).join("")}</div></div>
         <div class="pr">${price}</div></div>
     </article>`;
   }
@@ -151,7 +149,7 @@
     const colName = F.col !== "all" ? (cat._c[F.col] || {}).nombre : null;
     $("#result").textContent = F.fav ? `${list.length} favoritos` : `${list.length} diseños${colName ? " · " + colName : ""}${F.q ? " · “" + F.q + "”" : ""}`;
     if (!list.length) {
-      grid.innerHTML = `<div class="empty"><div class="got">${F.fav ? "Sin favoritos aún" : "Nada por aquí"}</div><div class="mono">${F.fav ? "Toca el corazón en un diseño" : "Prueba con otra búsqueda o colección"}</div></div>`;
+      grid.innerHTML = `<div class="empty"><div class="t">${F.fav ? "Sin favoritos aún" : "Nada por aquí"}</div><div>${F.fav ? "Toca el corazón en un diseño" : "Prueba con otra búsqueda o colección"}</div></div>`;
       $("#moreWrap").hidden = true; return;
     }
     grid.innerHTML = list.slice(0, F.n).map(cardHTML).join("");

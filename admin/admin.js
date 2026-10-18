@@ -153,7 +153,7 @@
       if (e.target.closest("[data-close]")) return closeEd();
       const t = e.target.closest("[data-pvg]"); if (t) { ED.g = t.dataset.pvg; drawPrev(); return; }
       const c = e.target.closest("[data-pvc]"); if (c) { ED.c = c.dataset.pvc; drawPrev(); return; }
-      if (e.target.closest("[data-delp]")) { if (confirm(`¿Borrar “${p.nombre}”? Se quitará de la tienda.`)) { cat.productos = cat.productos.filter((x) => x.id !== p.id); renorm(); dirty(); closeEd(); } return; }
+      if (e.target.closest("[data-delp]")) { if (confirm(`¿Borrar “${p.nombre}”? Se quitará de la tienda.`)) { cat.productos = cat.productos.filter((x) => x.id !== p.id); cat.eliminados = [...new Set([...(cat.eliminados || []), p.id])]; renorm(); dirty(); closeEd(); } return; }
       if (e.target.closest("[data-dupp]")) { const n = JSON.parse(JSON.stringify(p)); n.id = uniq(p.id + "-copia", new Set(Object.keys(cat._p))); n.nombre = p.nombre + " (copia)"; const i = cat.productos.indexOf(p); cat.productos.splice(i + 1, 0, n); cat.productos.forEach((x, j) => (x.orden = j)); renorm(); dirty(); editProduct(n.id); toast("Duplicado"); return; }
       const mv = e.target.closest("[data-movp]"); if (mv) { const i = cat.productos.indexOf(p), j = i + Number(mv.dataset.movp); if (j < 0 || j >= cat.productos.length) return; cat.productos.splice(i, 1); cat.productos.splice(j, 0, p); cat.productos.forEach((x, k) => (x.orden = k)); renorm(); dirty(); toast("Movido a la posición " + (j + 1)); return; }
       const rb = e.target.closest("[data-rmbg]"); if (rb) { removeBg(p, rb.dataset.rmbg); return; }
@@ -241,7 +241,7 @@
       if (e.target.closest("[data-newc]")) { const n = prompt("Nombre de la nueva colección:"); if (!n) return; const id = uniq(slug(n), new Set(Object.keys(cat._c))); cat.colecciones.push({ id, nombre: n.trim().slice(0, 30), grupo: "adultos", descripcion: "", activa: true, orden: cat.colecciones.length }); renorm(); dirty(); render(); return; }
       const tr = e.target.closest("tr[data-cid]"); if (!tr) return; const c = cat._c[tr.dataset.cid]; const i = cat.colecciones.indexOf(c);
       const mv = e.target.closest("[data-cmv]"); if (mv) { const j = i + Number(mv.dataset.cmv); if (j < 0 || j >= cat.colecciones.length) return; cat.colecciones.splice(i, 1); cat.colecciones.splice(j, 0, c); cat.colecciones.forEach((x, k) => (x.orden = k)); renorm(); dirty(); render(); return; }
-      if (e.target.closest("[data-delc]")) { const n = cat.productos.filter((p) => p.coleccion === c.id).length; if (n) return toast(`Tiene ${n} diseños. Muévelos o bórralos primero, o solo apágala.`, true); if (confirm(`¿Borrar la colección “${c.nombre}”?`)) { cat.colecciones.splice(i, 1); renorm(); dirty(); render(); } }
+      if (e.target.closest("[data-delc]")) { const n = cat.productos.filter((p) => p.coleccion === c.id).length; if (n) return toast(`Tiene ${n} diseños. Muévelos o bórralos primero, o solo apágala.`, true); if (confirm(`¿Borrar la colección “${c.nombre}”?`)) { cat.colecciones.splice(i, 1); cat.eliminados = [...new Set([...(cat.eliminados || []), "col:" + c.id])]; renorm(); dirty(); render(); } }
     };
   };
 

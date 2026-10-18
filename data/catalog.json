@@ -12,11 +12,9 @@
   "diasEnvio": "3 a 6 días hábiles",
   "diasCambio": 7,
   "barra": [
-   "Drop 01 disponible",
-   "Piezas contadas",
    "Envío gratis desde $999",
    "Cambios de talla en 7 días",
-   "Mira más allá"
+   "Nueva colección de octubre"
   ],
   "franja": [
    "Mira más allá",
@@ -77,12 +75,36 @@
    "orden": 1
   },
   {
+   "id": "sin-permiso",
+   "nombre": "Sin Permiso",
+   "grupo": "adultos",
+   "descripcion": "Frases para quien ya decidió.",
+   "activa": true,
+   "orden": 2
+  },
+  {
+   "id": "nocturna",
+   "nombre": "Nocturna",
+   "grupo": "adultos",
+   "descripcion": "Luna, memento mori y alma vieja.",
+   "activa": true,
+   "orden": 3
+  },
+  {
+   "id": "zodiaco",
+   "nombre": "Zodiaco",
+   "grupo": "adultos",
+   "descripcion": "Tu signo en gótica, con su constelación real.",
+   "activa": true,
+   "orden": 4
+  },
+  {
    "id": "herencia",
    "nombre": "Herencia",
    "grupo": "adultos",
    "descripcion": "Raíz mexica en neón.",
    "activa": true,
-   "orden": 2
+   "orden": 5
   },
   {
    "id": "noche",
@@ -90,7 +112,23 @@
    "grupo": "adultos",
    "descripcion": "Para los que salen cuando oscurece.",
    "activa": true,
-   "orden": 3
+   "orden": 6
+  },
+  {
+   "id": "norte",
+   "nombre": "Puro Norte",
+   "grupo": "adultos",
+   "descripcion": "Monterrey, el cerro y la carne asada.",
+   "activa": true,
+   "orden": 7
+  },
+  {
+   "id": "club",
+   "nombre": "Owl Club",
+   "grupo": "adultos",
+   "descripcion": "Universitario y de club, con nuestro búho.",
+   "activa": true,
+   "orden": 8
   },
   {
    "id": "buho",
@@ -98,7 +136,7 @@
    "grupo": "adultos",
    "descripcion": "Los originales de la casa.",
    "activa": true,
-   "orden": 4
+   "orden": 9
   },
   {
    "id": "mini-tejidos",
@@ -106,7 +144,7 @@
    "grupo": "infantil",
    "descripcion": "Amigos tejidos para los más chicos.",
    "activa": true,
-   "orden": 5
+   "orden": 10
   },
   {
    "id": "mini-brillos",
@@ -114,7 +152,7 @@
    "grupo": "infantil",
    "descripcion": "Brillo de cristal para niñas y niños.",
    "activa": true,
-   "orden": 6
+   "orden": 11
   },
   {
    "id": "mini-street",
@@ -122,7 +160,15 @@
    "grupo": "infantil",
    "descripcion": "Pequeños que tampoco piden permiso.",
    "activa": true,
-   "orden": 7
+   "orden": 12
+  },
+  {
+   "id": "mini-frases",
+   "nombre": "Mini Frases",
+   "grupo": "infantil",
+   "descripcion": "Frases con carácter para los más chicos.",
+   "activa": true,
+   "orden": 13
   },
   {
    "id": "octubre",
@@ -130,7 +176,7 @@
    "grupo": "temporada",
    "descripcion": "Muertos y brujas, a nuestra manera.",
    "activa": true,
-   "orden": 8
+   "orden": 14
   },
   {
    "id": "navidad",
@@ -138,7 +184,7 @@
    "grupo": "temporada",
    "descripcion": "Una Navidad con carácter.",
    "activa": true,
-   "orden": 9
+   "orden": 15
   },
   {
    "id": "amor",
@@ -146,7 +192,7 @@
    "grupo": "temporada",
    "descripcion": "Febrero, pero sin cursilerías.",
    "activa": false,
-   "orden": 10
+   "orden": 16
   },
   {
    "id": "girasoles",
@@ -154,7 +200,7 @@
    "grupo": "temporada",
    "descripcion": "Primavera en amarillo.",
    "activa": false,
-   "orden": 11
+   "orden": 17
   },
   {
    "id": "verano",
@@ -162,7 +208,7 @@
    "grupo": "temporada",
    "descripcion": "Sol, palmeras y neón.",
    "activa": false,
-   "orden": 12
+   "orden": 18
   }
  ],
  "prendas": [
@@ -1539,6 +1585,804 @@
    "prendas": [
     "playera",
     "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "ni-perdon-ni-permiso",
+   "nombre": "Ni Perdón Ni Permiso",
+   "coleccion": "sin-permiso",
+   "imagen": "assets/d/ni-perdon-ni-permiso.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 504,
+   "etiqueta": "Nuevo",
+   "piezas": null,
+   "descripcion": "Gótica pesada en dos tonos. Para los que ya decidieron.",
+   "activo": true,
+   "orden": 66,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "calladita",
+   "nombre": "Calladita No",
+   "coleccion": "sin-permiso",
+   "imagen": "assets/d/calladita.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 719,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Calladita no me veo más bonita.",
+   "activo": true,
+   "orden": 67,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "pa-ti",
+   "nombre": "Lo Que Es Pa’ Ti",
+   "coleccion": "sin-permiso",
+   "imagen": "assets/d/pa-ti.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 748,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "El dicho de la abuela, en tipografía de concierto.",
+   "activo": true,
+   "orden": 68,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "mala-hierba",
+   "nombre": "Mala Hierba",
+   "coleccion": "sin-permiso",
+   "imagen": "assets/d/mala-hierba.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Sello circular con nuestro búho.",
+   "activo": true,
+   "orden": 69,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "demasiado",
+   "nombre": "Demasiado Para Ti",
+   "coleccion": "sin-permiso",
+   "imagen": "assets/d/demasiado.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 534,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Caligrafía y gótica roja. Ego bien administrado.",
+   "activo": true,
+   "orden": 70,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "sin-miedo",
+   "nombre": "Sin Miedo al Éxito",
+   "coleccion": "sin-permiso",
+   "imagen": "assets/d/sin-miedo.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 752,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "En arco de estadio. Para los que van por todo.",
+   "activo": true,
+   "orden": 71,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "bendecida",
+   "nombre": "Bendecida y Peligrosa",
+   "coleccion": "sin-permiso",
+   "imagen": "assets/d/bendecida.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 547,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Fe y carácter en la misma prenda.",
+   "activo": true,
+   "orden": 72,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "corazon-piedra",
+   "nombre": "Corazón de Piedra",
+   "coleccion": "sin-permiso",
+   "imagen": "assets/d/corazon-piedra.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 552,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Bloque grande con gótica roja. Frío, pero bien vestido.",
+   "activo": true,
+   "orden": 73,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "hecho-caos",
+   "nombre": "Hecho en el Caos",
+   "coleccion": "sin-permiso",
+   "imagen": "assets/d/hecho-caos.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 561,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Universitario con contorno rojo. El orden es para otros.",
+   "activo": true,
+   "orden": 74,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "sin-filtro",
+   "nombre": "Sin Filtro",
+   "coleccion": "sin-permiso",
+   "imagen": "assets/d/sin-filtro.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 766,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Gótica pixelada. Lo que pienso, lo digo.",
+   "activo": true,
+   "orden": 75,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "zodiaco-aries",
+   "nombre": "Aries",
+   "coleccion": "zodiaco",
+   "imagen": "assets/d/zodiaco-aries.webp",
+   "fondo": "oscuro",
+   "ancho": 831,
+   "alto": 900,
+   "etiqueta": "Nuevo",
+   "piezas": null,
+   "descripcion": "Aries en gótica con su constelación real. “Primero actúo, luego pregunto.”",
+   "activo": true,
+   "orden": 76,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "zodiaco-tauro",
+   "nombre": "Tauro",
+   "coleccion": "zodiaco",
+   "imagen": "assets/d/zodiaco-tauro.webp",
+   "fondo": "oscuro",
+   "ancho": 709,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Tauro en gótica con su constelación real. “Terca, pero con estilo.”",
+   "activo": true,
+   "orden": 77,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "zodiaco-geminis",
+   "nombre": "Géminis",
+   "coleccion": "zodiaco",
+   "imagen": "assets/d/zodiaco-geminis.webp",
+   "fondo": "oscuro",
+   "ancho": 726,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Géminis en gótica con su constelación real. “Dos caras, cero dudas.”",
+   "activo": true,
+   "orden": 78,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "zodiaco-cancer",
+   "nombre": "Cáncer",
+   "coleccion": "zodiaco",
+   "imagen": "assets/d/zodiaco-cancer.webp",
+   "fondo": "oscuro",
+   "ancho": 597,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Cáncer en gótica con su constelación real. “Sensible, no débil.”",
+   "activo": true,
+   "orden": 79,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "zodiaco-leo",
+   "nombre": "Leo",
+   "coleccion": "zodiaco",
+   "imagen": "assets/d/zodiaco-leo.webp",
+   "fondo": "oscuro",
+   "ancho": 578,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Leo en gótica con su constelación real. “Nací para brillar.”",
+   "activo": true,
+   "orden": 80,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "zodiaco-virgo",
+   "nombre": "Virgo",
+   "coleccion": "zodiaco",
+   "imagen": "assets/d/zodiaco-virgo.webp",
+   "fondo": "oscuro",
+   "ancho": 552,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Virgo en gótica con su constelación real. “Todo en su lugar.”",
+   "activo": true,
+   "orden": 81,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "zodiaco-libra",
+   "nombre": "Libra",
+   "coleccion": "zodiaco",
+   "imagen": "assets/d/zodiaco-libra.webp",
+   "fondo": "oscuro",
+   "ancho": 834,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Libra en gótica con su constelación real. “En equilibrio, nunca en pausa.”",
+   "activo": true,
+   "orden": 82,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "zodiaco-escorpio",
+   "nombre": "Escorpio",
+   "coleccion": "zodiaco",
+   "imagen": "assets/d/zodiaco-escorpio.webp",
+   "fondo": "oscuro",
+   "ancho": 782,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Escorpio en gótica con su constelación real. “Te leo el alma.”",
+   "activo": true,
+   "orden": 83,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "zodiaco-sagitario",
+   "nombre": "Sagitario",
+   "coleccion": "zodiaco",
+   "imagen": "assets/d/zodiaco-sagitario.webp",
+   "fondo": "oscuro",
+   "ancho": 817,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Sagitario en gótica con su constelación real. “Libre por naturaleza.”",
+   "activo": true,
+   "orden": 84,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "zodiaco-capricornio",
+   "nombre": "Capricornio",
+   "coleccion": "zodiaco",
+   "imagen": "assets/d/zodiaco-capricornio.webp",
+   "fondo": "oscuro",
+   "ancho": 851,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Capricornio en gótica con su constelación real. “Disciplina sobre suerte.”",
+   "activo": true,
+   "orden": 85,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "zodiaco-acuario",
+   "nombre": "Acuario",
+   "coleccion": "zodiaco",
+   "imagen": "assets/d/zodiaco-acuario.webp",
+   "fondo": "oscuro",
+   "ancho": 688,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Acuario en gótica con su constelación real. “Nadie como yo.”",
+   "activo": true,
+   "orden": 86,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "zodiaco-piscis",
+   "nombre": "Piscis",
+   "coleccion": "zodiaco",
+   "imagen": "assets/d/zodiaco-piscis.webp",
+   "fondo": "oscuro",
+   "ancho": 829,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Piscis en gótica con su constelación real. “Sueño con los ojos abiertos.”",
+   "activo": true,
+   "orden": 87,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "puro-norte",
+   "nombre": "Puro Norte",
+   "coleccion": "norte",
+   "imagen": "assets/d/puro-norte.webp",
+   "fondo": "oscuro",
+   "ancho": 825,
+   "alto": 900,
+   "etiqueta": "Nuevo",
+   "piezas": null,
+   "descripcion": "Orgullo norteño con el Cerro de la Silla. Sin pedir permiso desde el 81.",
+   "activo": true,
+   "orden": 88,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "regia",
+   "nombre": "Regia de Nacimiento",
+   "coleccion": "norte",
+   "imagen": "assets/d/regia.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 546,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Caligrafía fina con gótica roja. Para la más regia de todas.",
+   "activo": true,
+   "orden": 89,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "cerro-silla",
+   "nombre": "Cerro de la Silla",
+   "coleccion": "norte",
+   "imagen": "assets/d/cerro-silla.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Sello con el atardecer regio detrás del cerro.",
+   "activo": true,
+   "orden": 90,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "norte-81",
+   "nombre": "Norte 81",
+   "coleccion": "norte",
+   "imagen": "assets/d/norte-81.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 679,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Estilo universitario con la lada de Monterrey.",
+   "activo": true,
+   "orden": 91,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "carne-asada",
+   "nombre": "Carne Asada y Paz Mental",
+   "coleccion": "norte",
+   "imagen": "assets/d/carne-asada.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 565,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "El plan perfecto de domingo, en gótica.",
+   "activo": true,
+   "orden": 92,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "memento-mori",
+   "nombre": "Memento Mori",
+   "coleccion": "nocturna",
+   "imagen": "assets/d/memento-mori.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 878,
+   "etiqueta": "Nuevo",
+   "piezas": null,
+   "descripcion": "La frase latina con cruz roja. Vive como si fuera hoy.",
+   "activo": true,
+   "orden": 93,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "luna-negra",
+   "nombre": "Luna Negra",
+   "coleccion": "nocturna",
+   "imagen": "assets/d/luna-negra.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 731,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Luna dorada entre destellos. Para las que brillan de noche.",
+   "activo": true,
+   "orden": 94,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "hija-noche",
+   "nombre": "Hija de la Noche",
+   "coleccion": "nocturna",
+   "imagen": "assets/d/hija-noche.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 859,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Caligrafía y gótica bajo la luna.",
+   "activo": true,
+   "orden": 95,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "amor-fati",
+   "nombre": "Amor Fati",
+   "coleccion": "nocturna",
+   "imagen": "assets/d/amor-fati.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Ama tu destino. Sello con gótica en dos tonos.",
+   "activo": true,
+   "orden": 96,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "alma-vieja",
+   "nombre": "Alma Vieja",
+   "coleccion": "nocturna",
+   "imagen": "assets/d/alma-vieja.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 722,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Fraktur clásica. Nací en la época equivocada.",
+   "activo": true,
+   "orden": 97,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "todo-pasa",
+   "nombre": "Todo Pasa",
+   "coleccion": "nocturna",
+   "imagen": "assets/d/todo-pasa.webp",
+   "fondo": "oscuro",
+   "ancho": 807,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Bloque gigante con contorno. Incluso esto.",
+   "activo": true,
+   "orden": 98,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "athletic-dept",
+   "nombre": "Athletic Dept. 26",
+   "coleccion": "club",
+   "imagen": "assets/d/athletic-dept.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 876,
+   "etiqueta": "Nuevo",
+   "piezas": null,
+   "descripcion": "Varsity clásico con el 26 en rojo.",
+   "activo": true,
+   "orden": 99,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "owl-club",
+   "nombre": "The Owl Club",
+   "coleccion": "club",
+   "imagen": "assets/d/owl-club.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 900,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Sello de club privado con nuestro búho.",
+   "activo": true,
+   "orden": 100,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "night-shift",
+   "nombre": "Night Shift",
+   "coleccion": "club",
+   "imagen": "assets/d/night-shift.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 693,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Para los que viven de noche.",
+   "activo": true,
+   "orden": 101,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "est-2026",
+   "nombre": "D’Astrea Est. 2026",
+   "coleccion": "club",
+   "imagen": "assets/d/est-2026.webp",
+   "fondo": "oscuro",
+   "ancho": 900,
+   "alto": 673,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "El logo de la casa con fecha de fundación.",
+   "activo": true,
+   "orden": 102,
+   "prendas": [
+    "playera",
+    "sudadera"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "mini-peligroso",
+   "nombre": "Pequeño pero Peligroso",
+   "coleccion": "mini-frases",
+   "imagen": "assets/d/mini-peligroso.webp",
+   "fondo": "claro",
+   "ancho": 900,
+   "alto": 673,
+   "etiqueta": "Nuevo",
+   "piezas": null,
+   "descripcion": "Para los más chicos de la casa, con todo el carácter.",
+   "activo": true,
+   "orden": 103,
+   "prendas": [
+    "playera-nino",
+    "sudadera-nino"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "mini-jefa",
+   "nombre": "Mini Jefa",
+   "coleccion": "mini-frases",
+   "imagen": "assets/d/mini-jefa.webp",
+   "fondo": "claro",
+   "ancho": 900,
+   "alto": 883,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Quien manda en casa, en caligrafía y gótica.",
+   "activo": true,
+   "orden": 104,
+   "prendas": [
+    "playera-nino",
+    "sudadera-nino"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "mini-jefe",
+   "nombre": "Mini Jefe",
+   "coleccion": "mini-frases",
+   "imagen": "assets/d/mini-jefe.webp",
+   "fondo": "claro",
+   "ancho": 900,
+   "alto": 883,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Quien manda en casa, en caligrafía y gótica.",
+   "activo": true,
+   "orden": 105,
+   "prendas": [
+    "playera-nino",
+    "sudadera-nino"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "futuro-rebelde",
+   "nombre": "Futuro Rebelde",
+   "coleccion": "mini-frases",
+   "imagen": "assets/d/futuro-rebelde.webp",
+   "fondo": "claro",
+   "ancho": 900,
+   "alto": 623,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Ya viene con su propia opinión.",
+   "activo": true,
+   "orden": 106,
+   "prendas": [
+    "playera-nino",
+    "sudadera-nino"
+   ],
+   "precios": {}
+  },
+  {
+   "id": "mini-berrinches",
+   "nombre": "Hecho con Amor",
+   "coleccion": "mini-frases",
+   "imagen": "assets/d/mini-berrinches.webp",
+   "fondo": "claro",
+   "ancho": 900,
+   "alto": 582,
+   "etiqueta": "",
+   "piezas": null,
+   "descripcion": "Hecho con amor (y berrinches).",
+   "activo": true,
+   "orden": 107,
+   "prendas": [
+    "playera-nino",
+    "sudadera-nino"
    ],
    "precios": {}
   }

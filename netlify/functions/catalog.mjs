@@ -4,10 +4,25 @@ export default async (req) => {
   const s = await store("dastrea");
   if (req.method === "GET") {
     const cat = await s.get("catalog", { type: "json" });
-    if (cat) return json({ catalog: cat, origen: "admin" }, 200, { "cache-control": "public, max-age=0, must-revalidate" });
-    // primera vez: semilla incluida en el sitio
     const seed = await fetch(new URL("/data/catalog.json", req.url)).then((r) => r.json()).catch(() => null);
-    return json({ catalog: seed, origen: "semilla" });
+    if (!cat) return json({ catalog: seed, origen: "semilla" });
+    // productos y colecciones nuevos que llegan con una actualización del sitio
+    // se agregan sin tocar lo que ya se editó en el administrador
+    if (seed) {
+      const gone = new Set(cat.eliminados || []);
+      const haveC = new Set((cat.colecciones || []).map((x) => x.id));
+      const haveP = new Set((cat.productos || []).map((x) => x.id));
+      const newC = (seed.colecciones || []).filter((x) => !haveC.has(x.id) && !gone.has("col:" + x.id));
+      const newP = (seed.productos || []).filter((x) => !haveP.has(x.id) && !gone.has(x.id));
+      if (newC.length) cat.colecciones = [...newC.map((x) => ({ ...x, orden: (x.orden ?? 0) - 100 })), ...cat.colecciones];
+      if (newP.length) cat.productos = [...newP.map((x) => ({ ...x, orden: (x.orden ?? 0) - 1000 })), ...cat.productos];
+      for (const k of ["prendas", "colores"]) {
+        const have = new Set((cat[k] || []).map((x) => x.id));
+        const add = (seed[k] || []).filter((x) => !have.has(x.id) && !gone.has(k + ":" + x.id));
+        if (add.length) cat[k] = [...(cat[k] || []), ...add];
+      }
+    }
+    return json({ catalog: cat, origen: "admin" }, 200, { "cache-control": "public, max-age=0, must-revalidate" });
   }
   if (req.method === "PUT") {
     if (!isAdmin(req)) return bad("Contraseña incorrecta", 401);
