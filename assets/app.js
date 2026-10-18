@@ -43,6 +43,11 @@
     $("#barTrack").innerHTML = msgs.map((t, i) => `<span class="${i ? "" : "on"}">${E(t)}</span>`).join("");
     clearInterval(renderTop.t);
     if (msgs.length > 1) { let k = 0; renderTop.t = setInterval(() => { const sp = $$("#barTrack span"); if (!sp.length) return; sp[k % sp.length].classList.remove("on"); k++; sp[k % sp.length].classList.add("on"); }, 4500); }
+    const fr = strip.length ? strip : ["Ni perdón ni permiso", "Mira más allá"];
+    const run = fr.map((t) => `<span>${E(t)}</span><i>†</i>`).join("");
+    $("#stripTrack").innerHTML = run + run;
+    const rev = [...fr].reverse().map((t) => `<span>${E(t)}</span><i>†</i>`).join("");
+    if ($("#stripTrack2")) $("#stripTrack2").innerHTML = rev + rev;
     const h = A().hero || {};
     $("#heroL1").textContent = h.linea1 || "Mira";
     $("#heroL2").textContent = h.linea2 || "más allá.";
